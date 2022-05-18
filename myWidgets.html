@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>My Widgets</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="myScript.js"></script>
+	</head>
+	<body>
+		<nav>
+			<a href="myContacts.html">My Contacts</a>
+			<a href="myForm.html">Form Input</a>
+			<a class="currentPage" href="myWidgets.html">My Widgets</a>
+			<a href="myServer.html">My Server</a>
+		</nav>
+		<h1>My widgets list</h1>
+		<div class="containerWidgets">
+			<div id="topLeftWidget">
+				My YouTube Widget
+				<br><iframe width="560" height="315" src="https://www.youtube.com/embed/jPF2AJ4wuc0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<div id="bottomLeftWidget">
+				My Twitter Widget
+				<br><a class="twitter-timeline" data-height="500"
+				href="https://twitter.com/LOLPigs?ref_src=twsrc%5Etfw">
+				Tweets by LOLPigs</a> <script async src="https://platform.twitter.com/widgets.js"></script>
+			</div>
+			<div id="passGenerator">
+				<h1 class="passHeader">Random Password Generate</h1>
+				<form onsubmit="generateRandomPassword()">
+					<label for="randomPassword">Password: </label>
+					<input type="text" name="randomPassword" id="randomPassword" placeholder="Type your password here">
+					<input type="submit" value="Generate">
+				</form>
+			</div>
+			<div id="passStrength">
+				<h1 class="passHeader">Password Strength Checker</h1>
+				<form id="register">
+					<label for="password"><b>Password: </b></label>
+					<input name="password" id="password" type="password" placeholder="Type Your Password here" onkeyup=checkStrength()>
+					<span id="result"></span>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

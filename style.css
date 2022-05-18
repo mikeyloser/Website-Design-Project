@@ -1,0 +1,365 @@
+body {
+	background-color: maroon;
+}
+
+nav {
+	display: flex;
+	width: 100%;
+	height: 35px;
+	background-color: #f8de7e;
+	align-items: center;
+}
+nav a{
+	padding: 3px;
+	text-align: center;
+	line-height: 30px;
+	color: black;
+	font-size: 20px;
+	text-decoration: none;
+	width: 20%;
+}
+
+
+
+nav a.currentPage {
+	background-color: #570000;
+}
+
+nav a:hover {
+	background-color: #D7AF00;
+}
+
+
+table {
+	border-collapse: collapse;
+}
+		
+table,th,td {
+	border: 1px solid black;
+}
+h1 {
+	color: #f8de7e;
+}
+
+.container {
+	display: grid;
+	grid-template-areas: 
+		"c s"
+		"m i";
+	height: 100%;
+	width: 100%;
+}
+
+.containerForm {
+	display: grid;
+	grid-template-areas: 
+		"n n n"
+		". cf m2";
+	height: 100%;
+	width: 100%;
+}
+
+#map2 {
+	grid-area: m2;
+	flex-basis: 0;
+	flex-grow: 4;
+	margin-top: 20%;
+	height: 70%;
+	width: 95%;
+}
+
+#contactForm {
+	grid-area: cf;
+	width: 90%;
+	background-color: white;
+	line-height: 1.6;
+	margin-top: 10%;
+	margin-left: 50%;
+}
+
+
+.containerWidgets {
+	display: grid;
+	width: 100%;
+	grid-template-columns: auto auto auto;
+	grid-gap: 5px 5px;
+}
+
+#navbar {
+	width: 100%;
+	grid-area: n;
+}
+
+#contactsTab {
+	grid-area: c;
+}	
+
+.sideImage {
+	grid-area: s;
+}
+
+
+#mapContainer {
+	width: 100%;
+	height: 450px;
+	grid-area: m;
+	margin-top: 20px;
+	display: flex;
+}
+
+#map {
+  flex-basis: 0;
+  flex-grow: 4;
+  height: 100%;
+  width: 100%;
+}
+
+#sidebar {
+  flex-basis: 15rem;
+  flex-grow: 1;
+  padding: 1rem;
+  max-width: 30rem;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  background-color: white;
+  display: none;
+}
+
+#inputArea {
+	grid-area: i;
+	width: 90%;
+	margin-left: 20px;
+	margin-top: 20px;
+	background-color: khaki;
+	font-size: 20px;
+}
+
+#other {
+	margin-top: 7px;
+	width: 130px;
+}
+#radius {
+	margin-top: 7px;
+	width: 50px;
+}
+
+#searchButton {
+	margin-top: 7px;
+}
+
+.sideImage img{
+		width: 400px;
+		height: 275px;
+}
+
+.sideImage p{
+	font-size: 22px;
+}
+
+
+
+tr:hover .contactImg{
+	visibility: visible;
+}
+
+.contactImg {
+	position: relative;
+	visibility: hidden;
+	width: auto;
+	height: 30px;
+	left: 37%
+}
+
+.formText {
+	margin-left: 25px;
+	
+}
+#name {
+	width: 90%;
+	padding: 10px;
+	margin-bottom: 16px;
+	margin-left: 25px;
+}
+
+#category {
+	width: 90%;
+	padding: 10px;
+	margin-bottom: 16px;
+	margin-left: 25px;
+}
+
+#location {
+	width: 90%;
+	padding: 10px;
+	margin-bottom: 16px;
+	margin-left: 25px;
+}
+
+#contact {
+	width: 90%;
+	padding: 10px;
+	margin-bottom: 16px;
+	margin-left: 25px;
+}
+
+#email {
+	width: 90%;
+	padding: 10px;
+	margin-bottom: 16px;
+	margin-left: 25px;
+}
+
+#name {
+	width: 90%;
+	padding: 10px;
+	margin-bottom: 16px;
+	margin-left: 25px;
+}
+
+#website {
+	width: 90%;
+	padding: 10px;
+	margin-bottom: 16px;
+	margin-left: 25px;
+}
+
+#subButton {
+	color: white;
+	border: none;
+	border-radius: 4px;
+	width: 20%;
+	padding: 10px;
+	margin-bottom: 16px;
+	margin-left: 25px;
+	background-color: #04AA6D;
+}
+
+#twitterW {
+	width: 560px;
+	height: 300px;
+}
+
+#topLeftWidget {
+	grid-row: 1 / 2;
+	grid-column: 1/2;
+}
+
+#bottomLeftWidget {
+	width: 560px;
+	height: 300px;
+	grid-row: 2 / 3;
+	grid-column: 1/2;
+}
+
+#passGenerator {
+	border-radius: 4px;
+	background-color: white;
+	text-align: center;
+	height: 150px;
+	width: 500px;
+    margin: auto;
+	grid-column: 2 / 3;
+	grid-row: 1 / 2;
+	
+}
+
+#passStrength {
+	border-radius: 4px;
+	background-color: white;
+	text-align: center;
+	height: 150px;
+	width: 500px;
+    margin: auto;
+	grid-column: 2 / 3;
+	grid-row: 2 / 3;
+}
+
+
+iframe {
+	 border:0;
+}
+
+.passHeader {
+	color: black;
+	margin-top: 0;
+}
+
+#randomPassword {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+#register label{
+	margin-right:5px;
+}
+#register input {
+	padding: 5px 14px;
+	border: 1px solid #d5d9da;
+	box-shadow: 0 0 9px #0E34F5 inset;
+	width: 272px;
+	font-size: 1em;
+	height: 25px;
+}
+#register .short{
+	font-weight:bold;
+	color:#FF0000;
+	font-size:larger;
+}
+#register .weak{
+	font-weight:bold;
+	color:orange;
+	font-size:larger;
+}
+#register .good{
+	font-weight:bold;
+	color:#2D98F3;
+	font-size:larger;
+}
+#register .strong{
+	font-weight:bold;
+	color: limegreen;
+	font-size:larger;
+}
+.result-dist {
+	margin-top: -10px;
+	font-size: 20px;
+}
+.gm-style-iw-d {
+	text-align: center;
+	width: 100%;
+	height: auto;
+}
+.markImg {
+	width: 50%;
+	height: 125px;
+}
+
+#contName {
+	margin-top: 20px;
+}
+#ytForm {
+	text-align: center;
+}
+#qText {
+	font-size: 20px;
+}
+#query {
+	width: 20%;
+	padding: 8px;
+	margin-bottom: 16px;
+}
+
+#ytButton {
+	color: white;
+	border: none;
+	border-radius: 4px;
+	width: 10%;
+	padding: 10px;
+	margin-bottom: 16px;
+	background-color: #04AA6D;
+}
+
+#links {
+	text-align: center;
+}

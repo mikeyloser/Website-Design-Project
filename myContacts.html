@@ -1,0 +1,156 @@
+<!DOCTYPE	html>
+<html lang="en">
+   <head>
+		<meta charset="utf-8">
+		<title>My Contacts</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="myScript.js"></script>
+		<script async src="https://maps.googleapis.com/maps/api/js?key=APIKEY&libraries=places&callback=initMap"></script>
+   </head> 
+   
+   <body onload="colorRows();initMap();markContacts()">
+		<nav>
+			<a class="currentPage" href="myContacts.html" >My Contacts</a>
+			<a href="myForm.html">Form Input</a>
+			<a href="myWidgets.html">My Widgets</a>
+			<a href="myServer.html">My Server</a>
+		</nav>
+   
+		<h1>My University Contacts</h1>
+		<div class="container">
+			<div id="contactsTab">
+				<table id="contacts">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Contact 
+							<br>Category</th>
+							<th>Location</th>
+							<th>Contact Information</th>
+							<th>Email</th>
+							<th>Website</th>
+						</tr>
+					</thead>		 
+					<tbody>
+						<tr onmouseover="chgimg('img/vincent-hall.jpg', 'Vincent Hall');updateContactDist('0')">
+							<td>Greg Anderson</td>
+							<td>Academic</td>
+							<td class="address">460 Vincent Hall 
+							<br>206 Church St SE 
+							<br>Minneapolis, MN 55455
+							</td>
+							<td>School of Mathematics Professor
+							<br><img src="img/vincent-hall.jpg" alt="Vincent Hall" class="contactImg">
+							</td>
+							<td><a href="mailto:gwanders@umn.edu">gwanders@umn.edu</a></td>
+							<td><a href="https://www-users.cse.umn.edu/~gwanders/">Prof. Greg Anderon's Home Page</a></td>
+						</tr>    
+					
+						<tr onmouseover="chgimg('img/coffman.jpg', 'Coffman');updateContactDist('1')">
+							<td>Ariel Chau</td>
+							<td>Personal</td>
+							<td class="address">315 Coffman 
+							<br>300 Washington Ave SE 
+							<br>Minneapolis, MN 55455
+							</td>
+							<td>Orientation & Transition Experiences Office Assistant
+							<br><img src="img/coffman.jpg" alt="Coffman" class="contactImg"></td>
+							<td><a href="mailto:oteinfo@umn.edu">oteinfo@umn.edu</a></td>
+							<td><a href="https://ote.umn.edu/about-ote/our-staff">OTE Staff Page</a></td>
+						</tr>
+					
+						<tr onmouseover="chgimg('img/keller.jpg', 'Keller Hall');updateContactDist('2')">
+							<td>Chris Dovolis</td>
+							<td>Academic</td>
+							<td class="address">6-195 Keller Hall 
+							<br>200 Union St SE 
+							<br>Minneapolis, MN 55455
+							</td>
+							<td>Department of Computer Science & Engineering Professor
+							<br><img src="img/keller.jpg" alt="Keller Hall" class="contactImg">
+							</td>
+							<td><a href="mailto:dovol002@umn.edu">dovol002@umn.edu</a></td>
+							<td><a href="https://cse.umn.edu/cs/chris-dovolis">Chris Dovolis Faculty Page</a></td>
+						</tr>
+					
+						<tr onmouseover="chgimg('img/keller.jpg', 'Keller Hall');updateContactDist('3')">
+							<td>Daniel F. Keefe</td>
+							<td>Academic</td>
+							<td class="address">6-211 Keller Hall 
+							<br>200 Union St SE 
+							<br>Minneapolis, MN 55455
+							</td>
+							<td>Department of Computer Science & Engineering Professor
+							<br><img src="img/keller.jpg" alt="Keller Hall" class="contactImg">
+							</td>
+							<td><a href="mailto:dfk@umn.edu">dfk@umn.edu</a></td>
+							<td><a href="https://www.danielkeefe.net/">Daniel Keefe's Website</a></td>
+						</tr>
+					
+						<tr onmouseover="chgimg('img/keller.jpg', 'Keller Hall');updateContactDist('4')">
+							<td>Kevin Wendt</td>
+							<td>Academic</td>
+							<td class="address">6-254 Keller Hall 
+							<br>200 Union St SE 
+							<br>Minneapolis, MN 55455
+							</td>
+							<td>Director of Graduate Studies for Software Engineering
+							<br><img src="img/keller.jpg" alt="Keller Hall" class="contactImg">
+							</td>
+							<td><a href="mailto:wendt@umn.edu">wendt@umn.edu</a></td>
+							<td><a href="https://www-users.cse.umn.edu/~wendt/">Kevin Wendt's Website</a></td>
+						</tr>
+					</tbody>
+				 
+				</table>
+			</div>
+			<div class="sideImage">
+				<img src="img/gophers-mascot.png" alt="Gophers Mascot" id="placeholder">
+				<br><label>Latitude/Longitude of the Target location:</label>
+				<div>
+					<input type="text" name="lat1" id="lat1" value="44.9727" placeholder="Lat 1 (°N/S)" title="Lat 1 (°N/S)" required="">
+					<input type="text" name="lon1" id="lon1" value="-93.23540000000003" placeholder="Lon 1 (°E/W)" title="Lon 1 (°E/W)" required="">
+					<br><p>Distance to the target location (metres): </p>
+					<output class="result-dist" title="Distance (in m)"></output>
+				</div>
+			</div>
+			<div id="mapContainer">
+				<div id="sidebar"></div>
+				<div id="map"></div>
+			</div>
+			<div id="inputArea">
+				<form>
+					<label for="places">Find </label>
+					<select onchange="enableOther()" id="places" name="places">
+							<option value="restaurant">Restaraunt</option>
+							<option value="hospital">Hospital</option>
+							<option value="supermarket">Supermarket</option>
+							<option value="parking">Parking</option>
+							<option value="other">Other</option>
+					</select>
+					<br><input id="other" type="text" name="other" placeholder="Enter Other Places" disabled="disabled"/>
+					<br>In <input id="radius" type="text" name="radius"/> meters
+					<br><input onclick='nearbyMarkers()' id="searchButton" type="submit" value="Search">
+					
+					<br>Take me to:
+					<select id="contName" name="contName">
+							<option value="Greg Anderson">Greg Anderson</option>
+							<option value="Ariel Chau">Ariel Chau</option>
+							<option value="Chris Dovolis">Chris Dovolis</option>
+							<option value="Daniel F. Keefe">Daniel F. Keefe</option>
+							<option value="Kevin Wendt">Kevin Wendt</option>
+					</select>
+					<br>From
+					<input id="start" type="text" name="start" value='Default (current location)'/>
+					<br>by
+					<br>
+						<input type="radio" id="walk" name="mode" value="WALKING">WALK
+						<br><input type="radio" id="drive" name="mode" value="DRIVING">DRIVE
+						<br><input type="radio" id="transit" name="mode" value="TRANSIT">TRANSIT
+					<br><input onclick='getDirections()' id="goButton" type="submit" value="Go">
+				</form>
+			</div>
+		</div>
+   </body>
+   
+</html>

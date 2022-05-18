@@ -1,0 +1,53 @@
+<!DOCTYPE	html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Form Input</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="myScript.js"></script>
+		<script async src="https://maps.googleapis.com/maps/api/js?key=APIKEY&libraries=places&callback=initMap"></script>
+	</head>
+	<body onload="initMap()">
+		<div class="containerForm">
+			<div id="navbar">
+				<nav>
+					<a href="myContacts.html">My Contacts</a>
+					<a class="currentPage" href="myForm.html">Form Input</a>
+					<a href="myWidgets.html">My Widgets</a>
+					<a href="myServer.html">My Server</a>
+				</nav>
+			</div>
+		
+			<div>
+				<form id="contactForm" action="http://localhost:9001/myForm.html" method="POST">
+				
+					<label class="formText" for="name">Name</label>
+					<br><input id="name" type="text" name="name" pattern="[a-zA-Z0-9 ]+" title="Contact's name must be alphanumeric." required/>
+					
+					<br><label class="formText" for="category">Contact Category</label>
+					<br><select id="category" name="category">
+							<option value="Personal">Personal</option>
+							<option value="Academic">Academic</option>
+							<option value="Industry">Industry</option>
+					</select>
+					
+					<label class="formText" for="location">Location</label>
+					<br><input id="location" type="text" name="location" required/>
+					
+					<label class="formText" for="contact">Contact Information</label>
+					<br><input id="contact" type="text" name="contact" required/>
+					
+					<label class="formText" for="email">Email</label>
+					<br><input id="email" type="email" name="email" required/>
+					
+					<label class="formText" for="website">Website</label>
+					<br><input id="website" type="url" name="website" required/>
+					
+					<input id="subButton" type="submit" value="Submit">
+				</form>
+			</div>
+			<div id="map2"></div>
+		</div>
+	</body>
+   
+  </html>

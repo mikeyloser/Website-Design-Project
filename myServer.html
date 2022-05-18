@@ -1,0 +1,32 @@
+<!DOCTYPE	html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+    <title>MyServer</title>
+    <link rel="stylesheet" href="style.css">
+	<script src="myScript.js"></script>
+  </head>
+  <body>
+		<h1>MyServer Page</h1>
+		<div id="navbar">
+					<nav>
+						<a href="myContacts.html">My Contacts</a>
+						<a href="myForm.html">Form Input</a>
+						<a href="myWidgets.html">My Widgets</a>
+						<a href="myServer.html">My Server</a>
+					</nav>
+		</div>
+			<div id='links'>
+				<ul>
+					<li> <a href="Coffman.html"> Coffman Picture</a> </li>
+					<li> <a href="Coffman_N_OuttaSpace.html"> Coffman + OuttaSpace</a> </li>
+					<li> <a href="OuttaSpace.html"> OuttaSpace MP3</a> </li>
+				</ul>
+			</div>
+			<form id="ytForm" action="http://localhost:9001/redirect" method="GET">
+				<label id="qText" for="query">Redirect to YouTube</label>
+				<input id="query" type="text" name="query"/>
+				<input id="ytButton" type="submit" value="Search">
+			</form>
+  </body>
+</html>
